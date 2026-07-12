@@ -41,8 +41,8 @@ The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT`
 
 1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb**.
 2. Write the raw structured disk image directly to the target block device (Replace `/dev/sdX` with your exact host MicroSD card interface node)
-	## $ sudo dd if=core-image of=/dev/sdX {replace X with your sd card name}.
-	## $ sudo dd if=core-image-bb of=/dev/sdX {for beagleboneblack}
+### $ sudo dd if=core-image of=/dev/sdX {replace X with your sd card name}.
+### $ sudo dd if=core-image-bb of=/dev/sdX {for beagleboneblack}
 
 Ip addresses are being configured at the start of the setup for beagleplay it is 192.168.0.100/24 and for beagleboneblack it is 192.168.0.102/24 which are being set in gm_start and setup_slave in the in usr/bin directory
 
