@@ -7,7 +7,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 
 ## Performance Metrics & Empirical Validation
 System timing characteristics were validated via Emperically using a dual-channel oscilloscope.
-[Oscilloscope Capture showing 65µs Context-Switch](images/image2)
+[Oscilloscope Capture showing 65µs Context-Switch](images/image5.png)
 
 ---
 ## Hardware Used 
@@ -27,7 +27,7 @@ The GNSS receiver interfaces via the physical MikroBUS expansion header:
 * **Hardware PPS Input:** Tied to `MIKROBUSGPIO1_9 of sys_interface or INT pin`, handling hardware interrupts via the kernel `pps-gpio` driver.
 * **User-Space Pulser:** Tied to `MIKROBUSGPIO1_12 of sys_interface or RST pin` , modulated via the custom `pps-pulser.c` binary loop this uses ioctl interface.
 
-![https://docs.beagleboard.org/_images/mikroBUS1.svg](images/image1)
+![https://docs.beagleboard.org/_images/mikroBUS1.svg](images/mikrobus_pinout.png)
 
 ### 2. Slave Node (BeagleBone Black) Header Configuration
 * **P8_11 and P8_12 header pins are configured to be used by pps-driver for input and output via custom device tree binary**
