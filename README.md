@@ -41,8 +41,8 @@ The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT`
 
 1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb**.
 2. Write the raw structured disk image directly to the target block device (Replace `/dev/sdX` with your exact host MicroSD card interface node)
-### $ sudo dd if=core-image of=/dev/sdX {replace X with your sd card name}.
-### $ sudo dd if=core-image-bb of=/dev/sdX {for beagleboneblack}
+#### $ sudo dd if=core-image of=/dev/sdX {replace X with your sd card name}.
+#### $ sudo dd if=core-image-bb of=/dev/sdX {for beagleboneblack}
 
 Ip addresses are being configured at the start of the setup for beagleplay it is 192.168.0.100/24 and for beagleboneblack it is 192.168.0.102/24 which are being set in gm_start and setup_slave in the in usr/bin directory
 
@@ -50,13 +50,13 @@ Ip addresses are being configured at the start of the setup for beagleplay it is
 If for some reason you need to access the disk image internals inorder to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modyifing anything in the rootfile system or the kernel configuration those changes are needed to be made back into the orignal image somehow. 
 
 ### Mounting the disk images 
-**$ sudo losetup -P /dev/loop31 output/core-image**
+#### **$ sudo losetup -P /dev/loop31 output/core-image**
 
  provides a loop device to mount our core-image as a sudo external device  
-**$ sudo mount /dev/loop31p1 /mnt/temp_sda1** 
+#### **$ sudo mount /dev/loop31p1 /mnt/temp_sda1** 
 
  this mounts the uboot to the temp_sda1 beaglboneblack's uboot.env is in this partition
-**$ sudo mount /dev/loop31p2 /mnt/temp_sda2**
+#### **$ sudo mount /dev/loop31p2 /mnt/temp_sda2**
 
 mounts the devices ext4 partition that contains the kernel Image and device tree binary along with uboot.env for beaglplay
 
