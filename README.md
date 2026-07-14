@@ -50,16 +50,16 @@ Ip addresses are being configured at the start of the setup for beagleplay it is
 If for some reason you need to access the disk image internals inorder to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modyifing anything in the rootfile system or the kernel configuration those changes are needed to be made back into the orignal image somehow. 
 
 ### Mounting the disk images 
-**/$ sudo losetup -P /dev/loop31 output/core-image **
+**$ sudo losetup -P /dev/loop31 output/core-image**
  provides a loop device to mount our core-image as a sudo external device  
-**/$ sudo mount /dev/loop31p1 /mnt/temp_sda1 ** 
+**$ sudo mount /dev/loop31p1 /mnt/temp_sda1** 
  this mounts the uboot to the temp_sda1 beaglboneblack's uboot.env is in this partition
-**/$ sudo mount /dev/loop31p2 /mnt/temp_sda2 **
+**$ sudo mount /dev/loop31p2 /mnt/temp_sda2**
 mounts the devices ext4 partition that contains the kernel Image and device tree binary along with uboot.env for beaglplay
-**/$ mount -t erofs -o loop /dev/loop31p3 /mnt/temp_sda3/ **
+**$ mount -t erofs -o loop /dev/loop31p3 /mnt/temp_sda3/**
 mounts the readonly rootfilesystem 
  
-.config of are in the config folder 
+.config of both BBB and Beagleplay are in the config folder 
 Inorder to make use of these simply copy these into the arch/arm/configs/ or arch/arm64/configs/ directory and then make with CROSS_COMPILE before running menuconfig. 
 
 inorder to see how to remake the kernel you can follow the implementation guide in the DOCs folder
