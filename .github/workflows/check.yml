@@ -1,0 +1,20 @@
+name: Project Verification
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required documentation files
+        run: |
+          echo "Checking repository structure..."
+          test -f README.md && echo "README found!" || exit 1
+          test -f LICENSE && echo "LICENSE found!" || exit 1
