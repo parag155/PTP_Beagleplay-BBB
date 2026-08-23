@@ -21,6 +21,7 @@ System timing characteristics were validated via Emperically using a dual-channe
 ---
 
 ***Hardware Architecture & Interface Mapping***
+
 To guarantee deterministic pin multiplexing across asynchronous reboots, Hardware pins are mapped directly to underlying peripheral controller addresses via custom Device Tree Binaries which were crosscompiled and put into the final image.
 
 ***1. Grandmaster Node (BeaglePlay) Bus Configurations***
