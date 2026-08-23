@@ -39,9 +39,9 @@ The GNSS receiver interfaces via the physical MikroBUS expansion header:
 ---
 ***Target Deployment***
 
-The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT` kernel, integrated device tree blobs, multi-stage bootloaders (TF-A, SPL, U-Boot), and the integrated network time daemons,for booting up the device press usr+rst button after flashing the image onto the SD card and correctly wiring up the GPS module, after that you might have to wait for a few minutes for the device to lock in. You can refer to the Implementation Docs inside the DOCs folder for debugging.This Implementation guide (Section 1 to 5) are heavily derived from Bootlin labmanuals for Beagleplay so for more detail you can check out [https://bootlin.com/]
+The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT` kernel, integrated device tree blobs, multi-stage bootloaders (TF-A, SPL, U-Boot), and the integrated network time daemons,for booting up the device press usr+rst button after flashing the image onto the SD card and correctly wiring up the GPS module, after that you might have to wait for a few minutes for the device to lock in. You can refer to the Implementation Docs inside the DOCs folder for debugging.This Implementation guide (Section 1 to 5) are heavily derived from Bootlin labmanuals for Beagleplay so for more detail you can check out [Bootlin](https://bootlin.com/)
 
-1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb** [https://github.com/parag155/PTP_Beagleplay-BBB/releases/tag/v1.0.0].
+1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb** [v1.0.0](https://github.com/parag155/PTP_Beagleplay-BBB/releases/tag/v1.0.0).
 2. Write the raw structured disk image directly to the target block device (Replace `/dev/sdX` with your exact host MicroSD card interface node)
 **$ sudo dd if=core-image of=/dev/sdX** 
 **$ sudo dd if=core-image-bb of=/dev/sdX** 
