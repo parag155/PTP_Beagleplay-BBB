@@ -12,9 +12,10 @@ System timing characteristics were validated via Emperically using a dual-channe
 
 ---
 ***Hardware Used***
-**Beagleplay and Beagboneblack**
-**u-block NEO M9N GPS module**
-**OpenHentek6022BL**
+* Beagleplay (AM625x)
+* Beagboneblack (AM335x)
+* u-block NEO M9N GPS module
+* OpenHentek6022BL
 
 
 ---
