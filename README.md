@@ -50,7 +50,8 @@ Ip addresses are being configured at the start of the setup for beagleplay it is
 
 ---
 ***Mounting the disk images***
-If for some reason you need to access the disk image internals inorder to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modyifing anything in the rootfile system or the kernel configuration those changes are needed to be made back into the orignal image somehow. 
+
+If for some reason you need to access the disk image internals inorder to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modyifing anything in the rootfile system or the kernel configuration those changes are needed to be made back into the orignal image. 
 
 ***Mounting the disk images*** 
 **$ sudo losetup -P /dev/loop31 output/core-image**
