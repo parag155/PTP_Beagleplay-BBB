@@ -1,4 +1,4 @@
-# Preconfigured Real-Time PTP (IEEE 1588) Grandmaster & Slave Architecture
+## Preconfigured Real-Time PTP (IEEE 1588) Grandmaster & Slave Architecture
 
 This is an implementation of a time synchronization stack using a BeaglePlay (Grandmaster) and a BeagleBone Black (Slave) driven by a hardware GNSS/PPS reference source 
 and running a `PREEMPT_RT` patched Linux kernel version 6.6.104.
