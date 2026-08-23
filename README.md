@@ -7,7 +7,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 
 ---
 ***Performance Metrics & Empirical Validation***
-System timing characteristics were validated via Emperically using a dual-channel oscilloscope.
+System timing characteristics were validated via empirically using a dual-channel oscilloscope.
 [Oscilloscope Capture showing 65µs Context-Switch](images/image5.png)
 
 ---
@@ -51,7 +51,7 @@ Ip addresses are being configured at the start of the setup for beagleplay it is
 ---
 ***Mounting the disk images***
 
-If for some reason you need to access the disk image internals inorder to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modyifing anything in the rootfile system or the kernel configuration those changes are needed to be made back into the orignal image. 
+If for some reason you need to access the disk image internals in order to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modifying anything in the rootfile system or the kernel configuration those changes are needed to be made back into the original image. 
 
 **$ sudo losetup -P /dev/loop31 output/core-image**
 
@@ -70,14 +70,14 @@ mounts the devices ext4 partition that contains the kernel Image and device tree
 mounts the readonly rootfilesystem 
  
 .config of both BBB and Beagleplay are in the config folder 
-Inorder to make use of these simply copy these into the arch/arm/configs/ or arch/arm64/configs/ directory and then make with CROSS_COMPILE before running menuconfig. 
+In order to make use of these simply copy these into the arch/arm/configs/ or arch/arm64/configs/ directory and then make with CROSS_COMPILE before running menuconfig. 
 
-inorder to see how to remake the kernel you can follow the implementation guide in the DOCs folder
+In order to see how to remake the kernel you can follow the implementation guide in the DOCs folder
 
 ---
 ***pps-pulser.c***
 
-pps-pulser is a userspace program its job is simple it creates a timerfd that requires 3 parameters for its operations first is the delay after which it should start its execution , second the total time between consicutive pulses to the GPIO and the no. of times these pulses are to be created.
+pps-pulser is a userspace program its job is simple it creates a timerfd that requires 3 parameters for its operations first is the delay after which it should start its execution , second the total time between consecutive pulses to the GPIO and the no. of times these pulses are to be created.
 This program is for testing purposes only and serves no other purpose hence is statically build and can be deleted when required from /usr/bin directory of the image.
-This program uses 1 GPIO pin which is accessed by ioctl v1 whose macros are defined at top incase it needs any type of changes.
-Incase you do make some changes you are going to have to recompile it statically inorder to work which is also provided in the Implementation DOCs.
+This program uses 1 GPIO pin which is accessed by ioctl v1 whose macros are defined at top in case it needs any type of changes.
+In case you do make some changes you are going to have to recompile it statically In order to work which is also provided in the Implementation DOCs.
