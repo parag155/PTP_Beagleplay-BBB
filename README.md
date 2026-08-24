@@ -6,6 +6,11 @@ and running a `PREEMPT_RT` patched Linux kernel version 6.6.104.
 This repository provides pre-configured, full-disk system images for the **BeaglePlay (Grandmaster)** and **BeagleBone Black (Slave)** that deploy a complete PTP (IEEE 1588) Real-Time Architecture out of the box. Engineered via `genimage`, each image bundles an automated `initramfs` boot phase with a high-performance, read-only `erofs` root filesystem. Upon power-on, the block image executes a hands-off initialization sequence: it builds the low-level hardware pinmux paths, settles network routing, and instantiates the PTP subsystem automatically with zero manual configuration required.
 
 ---
+***System Architecture***
+![System Arch](images/system_arch.png)
+
+
+---
 ***Performance Metrics & Empirical Validation***
 
 System timing characteristics were validated via empirically using a dual-channel oscilloscope.
