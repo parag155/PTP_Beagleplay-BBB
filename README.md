@@ -34,18 +34,20 @@ The GNSS receiver interfaces via the physical MikroBUS expansion header:
 ![https://docs.beagleboard.org/_images/mikroBUS1.svg](images/mikrobus_pinout.png)
 
 ***2. Slave Node (BeagleBone Black) Header Configuration***
-* **P8_11 and P8_12 header pins are configured to be used by pps-driver for input and output via custom device tree binary**
-* **P9_12 is used by ioctl for pps-pulser.c**
+* `P8_11` and `P8_12` header pins are configured to be used by pps-driver for input and output via custom device tree binary
+* `P9_12` is used by ioctl for pps-pulser.c
 
 ---
 ***Target Deployment***
 
 The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT` kernel, integrated device tree blobs, multi-stage bootloaders (TF-A, SPL, U-Boot), and the integrated network time daemons,for booting up the device press usr+rst button after flashing the image onto the SD card and correctly wiring up the GPS module, after that you might have to wait for a few minutes for the device to lock in. You can refer to the Implementation Docs inside the DOCs folder for debugging.This Implementation guide (Section 1 to 5) are heavily derived from Bootlin labmanuals for Beagleplay so for more detail you can check out [Bootlin](https://bootlin.com/)
 
-1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb** [v1.0.0](https://github.com/parag155/PTP_Beagleplay-BBB/releases/tag/v1.0.0).
+1. Locate the compressed target binary images from the repository storage directory named `core-image` and `core-image-bbb` [v1.0.0](https://github.com/parag155/PTP_Beagleplay-BBB/releases/tag/v1.0.0).
 2. Write the raw structured disk image directly to the target block device (Replace `/dev/sdX` with your exact host MicroSD card interface node)
-**$ sudo dd if=core-image of=/dev/sdX** 
-**$ sudo dd if=core-image-bbb of=/dev/sdX** 
+
+`$ sudo dd if=core-image of=/dev/sdX`
+
+`$ sudo dd if=core-image-bbb of=/dev/sdX` 
 
 Ip addresses are being configured at the start of the setup for beagleplay it is 192.168.0.100/24 and for beagleboneblack it is 192.168.0.102/24 which are being set in gm_start and setup_slave in the in usr/bin directory
 
@@ -54,19 +56,19 @@ Ip addresses are being configured at the start of the setup for beagleplay it is
 
 If for some reason you need to access the disk image internals in order to make some changes a config file for both the boards and the a way to mount the disk images is provided in this section you can modify the internals , but do remeber that after modifying anything in the rootfile system or the kernel configuration those changes are needed to be made back into the original image. 
 
-**$ sudo losetup -P /dev/loop31 output/core-image**
+`$ sudo losetup -P /dev/loop31 output/core-image`
 
  provides a loop device to mount our core-image as a sudo external device  
  
-**$ sudo mount /dev/loop31p1 /mnt/temp_sda1** 
+`$ sudo mount /dev/loop31p1 /mnt/temp_sda1`
 
  this mounts the uboot to the temp_sda1 beaglboneblack's uboot.env is in this partition
 
-**$ sudo mount /dev/loop31p2 /mnt/temp_sda2**
+`$ sudo mount /dev/loop31p2 /mnt/temp_sda2`
 
 mounts the devices ext4 partition that contains the kernel Image and device tree binary along with uboot.env for beaglplay
 
-**$ mount -t erofs -o loop /dev/loop31p3 /mnt/temp_sda3/**
+`$ mount -t erofs -o loop /dev/loop31p3 /mnt/temp_sda3/`
 
 mounts the readonly rootfilesystem 
  
