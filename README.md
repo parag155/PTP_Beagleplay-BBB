@@ -44,7 +44,7 @@ The pre-compiled full-disk binary images contain the cross-compiled `PREEMPT_RT`
 1. Locate the compressed target binary images from the repository storage directory named **core-image** and **core-image-bbb** [v1.0.0](https://github.com/parag155/PTP_Beagleplay-BBB/releases/tag/v1.0.0).
 2. Write the raw structured disk image directly to the target block device (Replace `/dev/sdX` with your exact host MicroSD card interface node)
 **$ sudo dd if=core-image of=/dev/sdX** 
-**$ sudo dd if=core-image-bb of=/dev/sdX** 
+**$ sudo dd if=core-image-bbb of=/dev/sdX** 
 
 Ip addresses are being configured at the start of the setup for beagleplay it is 192.168.0.100/24 and for beagleboneblack it is 192.168.0.102/24 which are being set in gm_start and setup_slave in the in usr/bin directory
 
@@ -77,7 +77,12 @@ In order to see how to remake the kernel you can follow the implementation guide
 ---
 ***pps-pulser.c***
 
-pps-pulser is a userspace program its job is simple it creates a timerfd that requires 3 parameters for its operations first is the delay after which it should start its execution , second the total time between consecutive pulses to the GPIO and the no. of times these pulses are to be created.
-This program is for testing purposes only and serves no other purpose hence is statically build and can be deleted when required from /usr/bin directory of the image.
-This program uses 1 GPIO pin which is accessed by ioctl v1 whose macros are defined at top in case it needs any type of changes.
-In case you do make some changes you are going to have to recompile it statically In order to work which is also provided in the Implementation DOCs.
+pps-pulser is a userspace testing utility that uses timerfd to generate GPIO pulses. It takes three operational parameters: the initial execution delay, the time interval between consecutive pulses, and the total pulse count.
+
+The utility controls a single GPIO pin accessed via the ioctl v1 interface. Pin configurations are defined as macros at the top of the source file for easy modification.
+
+Because it is strictly for testing, the program is statically built and can be safely deleted from /usr/bin when no longer needed. If you make any source code changes, you must recompile it statically, as described in the Implementation Docs.
+
+---
+
+*If these pre-configured real-time images or DTBs saved you debugging time on your BeaglePlay or BBB, please consider dropping a Star on the repository to help others find it!*
