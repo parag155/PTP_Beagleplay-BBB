@@ -7,6 +7,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 
 ---
 ***Performance Metrics & Empirical Validation***
+
 System timing characteristics were validated via empirically using a dual-channel oscilloscope.
 [Oscilloscope Capture showing 65µs Context-Switch](images/image5.png)
 
