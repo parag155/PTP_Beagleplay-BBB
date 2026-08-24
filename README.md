@@ -9,6 +9,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 ***System Architecture***
 ![System Arch](images/system_arch.png)
 
+*Hardware topology and signal measurement flow for Grandmaster, Slave, and Oscilloscope verification.*
 
 ---
 ***Performance Metrics & Empirical Validation***
