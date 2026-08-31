@@ -97,5 +97,24 @@ The utility controls a single GPIO pin accessed via the ioctl v1 interface. Pin 
 Because it is strictly for testing, the program is statically built and can be safely deleted from /usr/bin when no longer needed. If you make any source code changes, you must recompile it statically, as described in the Implementation Docs.
 
 ---
+***Log Timing Measurements***
+
+Timing layer	Metric	Observed measurement
+Chrony / PPS	             System time offset	147 ns slow
+Chrony / PPS	             Last offset	−614 ns
+Chrony / PPS	             RMS offset	958 ns
+Chrony / PPS	             Frequency correction	+1.186 ppm
+Chrony / PPS	             Root delay	1 ns
+Chrony / PPS	             Root dispersion	22.265 µs
+phc2sys — Grandmaster	    PHC → system clock offset	−12 to +29 ns
+phc2sys — Grandmaster	    Reported measurement delay	475–525 ns
+ptp4l — Slave	            Master offset	−689 to +975 ns
+ptp4l — Slave	            PTP path delay	785–839 ns
+phc2sys — Slave	          PHC → system clock offset	−661 to +671 ns
+phc2sys — Slave          	Reported measurement delay	1083–1125 ns
+
+
+*The pps-pulser userspace application generates a GPIO transition at the one-second boundary using the synchronized system clock on both platforms. The resulting signals were measured directly with an oscilloscope, with an observed offset of approximately 65 µs. This measurement includes userspace scheduling and GPIO output latency and does not represent the underlying PTP clock offset.*
+---
 
 *If these pre-configured real-time images or DTBs saved you debugging time on your BeaglePlay or BBB, please consider dropping a Star on the repository to help others find it!*
