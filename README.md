@@ -24,7 +24,7 @@ This behaviour occurs because pps-echo operates as a kernel-space driver, active
 ---
 ***Hardware Used***
 * Beagleplay (AM625x)
-* Beagboneblack (AM335x)
+* Beagleboneblack (AM335x)
 * u-block NEO M9N GPS module
 * OpenHentek6022BL
 
