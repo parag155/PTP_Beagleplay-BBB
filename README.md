@@ -101,16 +101,27 @@ Because it is strictly for testing, the program is statically built and can be s
 
 Timing layer	Metric	Observed measurement
 Chrony / PPS	             System time offset	147 ns slow
+
 Chrony / PPS	             Last offset	−614 ns
+
 Chrony / PPS	             RMS offset	958 ns
+
 Chrony / PPS	             Frequency correction	+1.186 ppm
+
 Chrony / PPS	             Root delay	1 ns
+
 Chrony / PPS	             Root dispersion	22.265 µs
+
 phc2sys — Grandmaster	    PHC → system clock offset	−12 to +29 ns
+
 phc2sys — Grandmaster	    Reported measurement delay	475–525 ns
+
 ptp4l — Slave	            Master offset	−689 to +975 ns
+
 ptp4l — Slave	            PTP path delay	785–839 ns
+
 phc2sys — Slave	          PHC → system clock offset	−661 to +671 ns
+
 phc2sys — Slave          	Reported measurement delay	1083–1125 ns
 
 
