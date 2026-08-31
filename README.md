@@ -115,6 +115,7 @@ phc2sys — Slave          	Reported measurement delay	1083–1125 ns
 
 
 *The pps-pulser userspace application generates a GPIO transition at the one-second boundary using the synchronized system clock on both platforms. The resulting signals were measured directly with an oscilloscope, with an observed offset of approximately 65 µs. This measurement includes userspace scheduling and GPIO output latency and does not represent the underlying PTP clock offset.*
+
 ---
 
 *If these pre-configured real-time images or DTBs saved you debugging time on your BeaglePlay or BBB, please consider dropping a Star on the repository to help others find it!*
