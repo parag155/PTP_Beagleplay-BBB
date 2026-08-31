@@ -14,7 +14,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 ---
 ***Performance Metrics & Empirical Validation***
 
-System timing characteristics were validated via empirically using a dual-channel oscilloscope.
+System timing characteristics were validated empirically using a dual-channel oscilloscope.
 ![Oscilloscope Capture showing 65µs Context-Switch](images/image5.png)
 
 This screenshot highlights the difference between the Grandmaster (Yellow) and Slave (Blue) timerfd outputs while the pps-echo pin was active. Beyond the increased delay between master and slave, notice that the pulse jitter is unpredictable, spiking as high as 20 µs.
