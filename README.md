@@ -17,7 +17,7 @@ This repository provides pre-configured, full-disk system images for the **Beagl
 System timing characteristics were validated empirically using a dual-channel oscilloscope.
 ![Oscilloscope Capture showing 65µs Context-Switch](images/image5.png)
 
-This screenshot highlights the difference between the Grandmaster (Yellow) and Slave (Blue) timerfd outputs while the pps-echo pin was active. Beyond the increased delay between master and slave, notice that the pulse jitter is unpredictable, spiking as high as 20 µs.
+This screenshot highlights the Network precision between the Grandmaster (Yellow) and Slave (Blue) timerfd outputs to be 65 us while the pps-echo pin was active. Beyond the increased delay between master and slave, notice that the pulse jitter is unpredictable, spiking as high as 20 µs.
 
 This behaviour occurs because pps-echo operates as a kernel-space driver, actively consuming CPU cycles to generate echo pulses and causing execution contention for the user-space timerfd application so turning off echo pin which is activated via ppsctl inside the slave and grandmaster startup script in usr/bin is recommended in case using directly for deployment .
 
