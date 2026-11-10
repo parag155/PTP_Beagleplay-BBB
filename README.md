@@ -1,5 +1,7 @@
 ## PTP (IEEE 1588) Time Server and Client for Beagleplay and Beaglebone Black 
 
+Run fetch-core-image.sh to get the images for beagleplay and BBB
+
 This is an implementation of a time synchronization stack using a BeaglePlay (Grandmaster) and a BeagleBone Black (Slave) driven by a hardware GNSS/PPS reference source 
 and running a `PREEMPT_RT` patched Linux kernel version 6.6.104.
 
